@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.3.103.45" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.72" />
+    <PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.3.107.1" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.3.102.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
