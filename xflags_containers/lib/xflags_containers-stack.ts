@@ -20,7 +20,6 @@ export class XflagsContainersStack extends cdk.Stack {
       hostPort:8080
     })
     
-
     let service = new ecs_patterns.ApplicationLoadBalancedFargateService(this, 'XFlagsNodeJsApp', {
       memoryLimitMiB: 512,
       cpu: 256,

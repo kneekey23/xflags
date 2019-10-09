@@ -29,7 +29,9 @@ export class XFlagsPipelineStack extends cdk.Construct {
 
     // Configure the CodePipeline source - where your CDK App's source code is hosted
     const sourceOutput = new codepipeline.Artifact();
-    const oauth = cdk.SecretValue.secretsManager('github-token');
+    const oauth = cdk.SecretValue.secretsManager('github-token', {
+      jsonField: 'github-token'
+    });
     const source = new codepipeline_actions.GitHubSourceAction({
     actionName: 'GitHub',
     output: sourceOutput,
