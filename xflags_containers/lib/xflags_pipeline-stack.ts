@@ -4,6 +4,8 @@ import codepipeline = require('@aws-cdk/aws-codepipeline');
 import codepipeline_actions = require('@aws-cdk/aws-codepipeline-actions');
 import cicd = require('@aws-cdk/app-delivery');
 import codebuild = require('@aws-cdk/aws-codebuild')
+import kms = require('@aws-cdk/aws-kms')
+import s3 = require('@aws-cdk/aws-s3')
 
 //const app = new cdk.App();
 
@@ -13,12 +15,16 @@ export class XFlagsPipelineStack extends cdk.Construct {
 
     // We define a stack that contains the CodePipeline
     const pipelineStack = new cdk.Stack(this, 'PipelineStack');
-    const pipeline = new codepipeline.Pipeline(pipelineStack, 'CodePipeline', {
-      // Mutating a CodePipeline can cause the currently propagating state to be
-      // "lost". Ensure we re-run the latest change through the pipeline after it's
-      // been mutated so we're sure the latest state is fully deployed through.
-      restartExecutionOnUpdate: true,
-      /* ... */
+    const key = new kms.Key(this, 'Key');
+    const myArtifactBucket = new s3.Bucket(this, 'Bucket', {
+      encryptionKey: key, // no Alias here!
+      // ...
+    });
+    
+    const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
+      artifactBucket: myArtifactBucket,
+      restartExecutionOnUpdate: true
+      // ...
     });
 
     // Configure the CodePipeline source - where your CDK App's source code is hosted
