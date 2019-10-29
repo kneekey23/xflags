@@ -13,8 +13,8 @@ export class XflagsContainersStack extends cdk.Stack {
 
     let taskDefinition = new ecs.FargateTaskDefinition(this, 'fargateTaskDef')
 
-    taskDefinition.addContainer('nodejsapp',{
-      image: ecs.AssetImage.fromAsset('nodejsapp')
+    taskDefinition.addContainer('producer',{
+      image: ecs.AssetImage.fromAsset('producer')
     }).addPortMappings({
       containerPort: 8080,
       hostPort:8080

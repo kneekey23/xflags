@@ -1,7 +1,7 @@
 {
-  "name": "docker_web_app",
+  "name": "consumer",
   "version": "1.0.0",
-  "description": "nodejs web app",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,9 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.546.0",
-    "enum": "^2.5.0",
-    "express": "^4.17.1",
-    "uuid": "^3.3.3"
+    "aws-sdk": "^2.547.0",
+    "express": "^4.17.1"
   }
 }
