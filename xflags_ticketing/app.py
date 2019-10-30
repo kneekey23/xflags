@@ -5,10 +5,10 @@ import uuid
 
 app = Chalice(app_name='xflags_ticketing')
 ticketing_table = "xflags_ticketing"
-dynamodb = boto3.resource('dynamodb', region_name='us-west-1')
+dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
 table = dynamodb.Table(ticketing_table)
 
-@app.route('/purchase', methods=['POST'])
+@app.route('/purchase', methods=['POST'], cors=True)
 def purchase():
     ticket_json = app.current_request.json_body
     ticket_id = uuid.uuid4()

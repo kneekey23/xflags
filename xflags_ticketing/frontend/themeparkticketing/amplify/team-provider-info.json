@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "themeparkticketing-dev-20191030122348-authRole",
+            "UnauthRoleArn": "arn:aws:iam::805580953652:role/themeparkticketing-dev-20191030122348-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::805580953652:role/themeparkticketing-dev-20191030122348-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "themeparkticketing-dev-20191030122348-deployment",
+            "UnauthRoleName": "themeparkticketing-dev-20191030122348-unauthRole",
+            "StackName": "themeparkticketing-dev-20191030122348",
+            "StackId": "arn:aws:cloudformation:us-west-2:805580953652:stack/themeparkticketing-dev-20191030122348/cc687420-fb4a-11e9-9142-02eb596faf62"
+        },
+        "categories": {
+            "auth": {
+                "themeparkticketinga70b6e01": {}
+            }
+        }
+    }
+}
